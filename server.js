@@ -1,7 +1,9 @@
 const compression = require('compression');
+var csp = require('helmet-csp');
 const express = require('express');
 const fs = require('fs');
 const helmet = require('helmet');
+const hpp = require('hpp');
 const https = require('https');
 const morgan = require('morgan');
 const path = require('path');
@@ -9,8 +11,19 @@ const path = require('path');
 const app = express();
 
 app.use(helmet());
+app.use(hpp());
 app.use(morgan('combined'));
 app.use(compression());
+app.use(csp({
+  directives: {
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'"],
+    imgSrc: ['img.com', 'data:'],
+    sandbox: ['allow-forms', 'allow-scripts'],
+    reportUri: '/report-violation',
+    objectSrc: ["'none'"]
+  }
+}));
 app.use(express.static('./build', {extensions: ['html']}));
 
 app.get('/', function (req, res) {
