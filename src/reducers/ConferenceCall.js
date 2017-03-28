@@ -3,6 +3,6 @@ const ConferenceCall = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default ConferenceCall;

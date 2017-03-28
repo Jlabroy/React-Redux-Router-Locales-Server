@@ -1,5 +1,3 @@
-const Actions = {
-
-};
+const Actions = {};
 
 export default Actions;

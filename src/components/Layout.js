@@ -1,14 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import L from '../locales/Layout';
 import R from '../locales/Route';
 
 const Layout = props => {
-
   try {
     L.setLanguage(props.match.params.lang);
     R.setLanguage(props.match.params.lang);
-  } catch (e) { }
+  } catch (e) {}
 
   return (
     <div>
@@ -18,7 +17,9 @@ const Layout = props => {
       <navigation>
         <ul>
           <li><Link to={R.HOME.link}>{R.HOME.text}</Link></li>
-          <li><Link to={R.CONFERENCE_CALL.link}>{R.CONFERENCE_CALL.text}</Link></li>
+          <li>
+            <Link to={R.CONFERENCE_CALL.link}>{R.CONFERENCE_CALL.text}</Link>
+          </li>
           <li><Link to={R.CONTACT.link}>{R.CONTACT.text}</Link></li>
         </ul>
       </navigation>
@@ -29,7 +30,7 @@ const Layout = props => {
         {L.KEY_2}
       </footer>
     </div>
-  )
+  );
 };
 
 export default Layout;

@@ -3,6 +3,6 @@ const Contact = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default Contact;

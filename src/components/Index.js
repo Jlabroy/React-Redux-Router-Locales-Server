@@ -1,6 +1,6 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import {Link} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const Index = props => {
   return (
@@ -12,7 +12,7 @@ const Index = props => {
         <li><Link to="/fr">French</Link></li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default Index;

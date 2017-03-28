@@ -1,6 +1,5 @@
-const HomeReducer = (state = {button: false}, action) => {
+const HomeReducer = (state = { button: false }, action) => {
   switch (action.type) {
-
     case 'BUTTON_CLICK':
       return Object.assign({}, state, {
         button: action.data
@@ -9,6 +8,6 @@ const HomeReducer = (state = {button: false}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default HomeReducer;
