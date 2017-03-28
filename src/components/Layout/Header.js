@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 import Localized from "../../common/Localized";
 import L from "../../locales/Route";
-import { Header as StyledHeader, Link } from "../../Styled";
+import { Header as StyledHeader, Link } from "../Styled";
 
 const propTypes = {
   Locale: PropTypes.object.isRequired

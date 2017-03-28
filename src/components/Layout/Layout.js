@@ -2,13 +2,13 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, match }) => (
   <div>
-    <Header />
+    <Header match={match} />
     <main>
       {children}
     </main>
-    <Footer />
+    <Footer match={match} />
   </div>
 );
 
