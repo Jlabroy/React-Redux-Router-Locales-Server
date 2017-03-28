@@ -4,7 +4,8 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.5",
-    "react-snapshot": "^1.0.4"
+    "react-snapshot": "^1.0.4",
+    "@kadira/storybook": "^2.21.0"
   },
   "dependencies": {
     "compression": "^1.6.2",
@@ -33,7 +34,9 @@
     "build": "react-scripts build && react-snapshot",
     "precommit": "lint-staged",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"

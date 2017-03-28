@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import L from '../locales/Layout';
-import R from '../locales/Route';
+import React from "react";
+import L from "../locales/Layout";
+import R from "../locales/Route";
+import { Header, Link } from "./Styled";
 
 const Layout = props => {
   try {
@@ -11,18 +11,11 @@ const Layout = props => {
 
   return (
     <div>
-      <header>
-        <h1>{L.KEY_1}</h1>
-      </header>
-      <navigation>
-        <ul>
-          <li><Link to={R.HOME.link}>{R.HOME.text}</Link></li>
-          <li>
-            <Link to={R.CONFERENCE_CALL.link}>{R.CONFERENCE_CALL.text}</Link>
-          </li>
-          <li><Link to={R.CONTACT.link}>{R.CONTACT.text}</Link></li>
-        </ul>
-      </navigation>
+      <Header>
+        <Link to={R.HOME.link}>{R.HOME.text}</Link>
+        <Link to={R.CONFERENCE_CALL.link}>{R.CONFERENCE_CALL.text}</Link>
+        <Link to={R.CONTACT.link}>{R.CONTACT.text}</Link>
+      </Header>
       <main>
         {props.children}
       </main>
