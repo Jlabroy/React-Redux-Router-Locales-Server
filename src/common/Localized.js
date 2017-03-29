@@ -5,7 +5,8 @@ const Localized = (WrappedComponent, Locales) =>
     constructor(props) {
       super(props);
 
-      Locales.setLanguage(props.match.params.lang);
+      const lang = props.match.params.lang ? props.match.params.lang : "en";
+      Locales.setLanguage(lang);
       this.state = { Locale: Locales };
     }
 

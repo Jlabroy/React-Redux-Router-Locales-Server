@@ -1,31 +1,12 @@
-const compression = require("compression");
-const csp = require("helmet-csp");
 const express = require("express");
 const fs = require("fs");
-const helmet = require("helmet");
-const hpp = require("hpp");
 const https = require("https");
-const morgan = require("morgan");
 const path = require("path");
+const middleware = require("./middleware");
 
 const app = express();
 
-app.use(helmet());
-app.use(hpp());
-app.use(morgan("combined"));
-app.use(compression());
-// app.use(
-//   csp({
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       styleSrc: ["'self'", "'unsafe-inline'"],
-//       imgSrc: ["'self'", 'data:'],
-//       sandbox: ['allow-forms', 'allow-scripts'],
-//       reportUri: '/report-violation',
-//       objectSrc: ["'none'"]
-//     }
-//   })
-// );
+app.use(...middleware);
 app.use(express.static("./build", { extensions: ["html"] }));
 
 app.get("/", function(req, res) {

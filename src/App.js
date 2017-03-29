@@ -7,20 +7,18 @@ import ConferenceCalling from "./containers/ConferenceCalling";
 import Contact from "./containers/Contact";
 import "./styles/App.css";
 
-const App = props => {
-  return (
-    <Router>
-      <div>
-        <Route exact path="/" component={Index} />
-        <Route exact path="/:lang" component={Home} />
-        <Route path="/:lang/contact" component={Contact} />
-        <Route
-          path={["/:lang/conference-call", "/:lang/conference-telephonique"]}
-          component={ConferenceCalling}
-        />
-      </div>
-    </Router>
-  );
-};
+const App = () => (
+  <Router>
+    <div>
+      <Route exact path="/" component={Index} />
+      <Route exact path="/:lang" component={Home} />
+      <Route path="/:lang/contact" component={Contact} />
+      <Route
+        path={["/:lang/conference-call", "/:lang/conference-telephonique"]}
+        component={ConferenceCalling}
+      />
+    </div>
+  </Router>
+);
 
 export default App;
